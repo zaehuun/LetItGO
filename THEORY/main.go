@@ -9,8 +9,19 @@ package main
 import "fmt"
 
 /*
+1. 곱하기 함수를 생성한다.
+*/
+func multiply(a int, b int) int {
+	return a * b
+}
+
+/*
 1. Go 프로그램의 시작점
 */
 func main() {
-	fmt.Println("Hello world!")
+	var text string = "Hello World!"
+	text2 := "Hello GO" //타입을 알아서 지정, 함수 내에서만 가능
+	fmt.Println(text)
+	fmt.Println(text2)
+	fmt.Println(multiply(2, 2))
 }
