@@ -40,9 +40,29 @@ func repeatMe(words ...string) {
 }
 
 func nakedReturn(name string) (length int, uppercase string) {
-	length = len(name) //length와 uppercase는 위에서 이미 만듦
+	defer fmt.Println("I'm done") //defer를 사용하면 함수가 끝나고 실행시킴
+	length = len(name)            //length와 uppercase는 위에서 이미 만듦
 	uppercase = strings.ToUpper(name)
 	return
+}
+
+func superAdd(numbers ...int) int {
+	for index, number := range numbers {
+		fmt.Println(index, number)
+	}
+	total := 0
+	for i := 0; i < len(numbers); i++ {
+		total += numbers[i]
+	}
+	return total
+}
+
+func canIDring(age int) bool {
+	if age < 18 {
+		return false
+	} else {
+		return true
+	}
 }
 
 /*
@@ -59,4 +79,6 @@ func main() {
 	tmpValue, _ := lenAndUpper("zaehuun") // _ 를 사용하면 무시 가능
 	fmt.Println(totalLength, upperName, tmpValue)
 	repeatMe("A", "B", "C", "D")
+	result := superAdd(1, 2, 3, 4, 5)
+	fmt.Println(result)
 }
