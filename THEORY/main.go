@@ -57,12 +57,12 @@ func superAdd(numbers ...int) int {
 	return total
 }
 
-func canIDring(age int) bool {
-	if age < 18 {
+func canIDrink(age int) bool {
+	if koreanAge := age + 2; koreanAge < 18 {
 		return false
-	} else {
-		return true
 	}
+	return true
+
 }
 
 /*
@@ -81,4 +81,15 @@ func main() {
 	repeatMe("A", "B", "C", "D")
 	result := superAdd(1, 2, 3, 4, 5)
 	fmt.Println(result)
+
+	names := [5]string{"hi"}
+	names[1] = "good"
+	names[2] = "bye"
+	names[3] = "hello"
+	names[4] = "workd"
+	fmt.Println(names)
+
+	namesNoLength := []string{"hi"}
+	namesNoLength = append(namesNoLength, "new")
+	fmt.Println(namesNoLength)
 }
