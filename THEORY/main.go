@@ -66,7 +66,7 @@ func makeArray() {
 }
 
 func makeMaps() {
-	zaehuun := map[string]string{}
+	zaehuun := map[string]string{"dept": "cs"}
 	zaehuun["name"] = "hoon"
 	zaehuun["age"] = "26"
 	for key, value := range zaehuun {
@@ -74,6 +74,16 @@ func makeMaps() {
 	}
 }
 
+type person struct {
+	name    string
+	age     int
+	favFood []string
+}
+
 func main() {
-	makeMaps()
+	favFood := []string{"gogi", "bob"}
+	// zaehuun := person{"hoon", 26, favFood}
+	zaehuun := person{name: "hoon", age: 26, favFood: favFood}
+	fmt.Println(zaehuun)
+	fmt.Println(zaehuun.name)
 }
