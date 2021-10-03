@@ -2,19 +2,20 @@ package main
 
 import (
 	"fmt"
-	"log"
 
-	"github.com/zaehuun/LetItGO/DICTIONARY/accounts"
+	"github.com/zaehuun/LetItGO/DICTIONARY/mydict"
 )
 
 func main() {
-	account := accounts.NewAccount("zaehuun")
-	account.Deposit(20)
-	err := account.Withdraw(20)
-	fmt.Println(account)
+	dictionary := mydict.Dictionary{}
+	dictionary.Add("hello", "first")
+	dictionary.Search("hello")
+	dictionary.Delete("hello")
+	word, err := dictionary.Search("hello")
 	if err != nil {
-		log.Fatalln(err)
+		fmt.Println(err)
+	} else {
+		fmt.Println(word)
 	}
-
-	fmt.Println(account.Balance(), account.Owner())
+	// dictionary.Update()
 }
