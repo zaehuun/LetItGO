@@ -33,7 +33,23 @@ func (a *Account) Withdraw(amount int) error {
 	return nil
 }
 
+// Change Owner of the account
+func (a *Account) ChangeOwner(newOwner string) {
+	a.owner = newOwner
+}
+
+// Owner of the account
+func (a Account) Owner() string {
+	return a.owner
+}
+
 // Balance of your account
 func (a Account) Balance() int {
 	return a.balance
+}
+
+// struct를 출력하면 내부적으로 이걸 자동 호출해서 출력함
+// fmt.Println(account) 하면 hello 출력 됨
+func (a Account) String() string {
+	return "hello"
 }
